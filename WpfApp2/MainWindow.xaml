@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Notatnik" MaxHeight="500" MaxWidth="780" >
+
+    <Grid >
+        
+        <StackPanel >
+            <Menu >
+                <MenuItem Header="_Plik" >
+                    <MenuItem Header="_Nowy" Click="MenuItem_Nowy" />
+                    <MenuItem Header="_Zapisz" Click="MenuItem_Zapisz"/>
+                    <MenuItem Header="_Otwórz" Click="MenuItem_Otworz"/>
+                    <MenuItem Header="_Wyjdź" Click="MenuItem_Wyjdz"/>
+                </MenuItem>
+                <MenuItem Header="_Edycja">
+                    <MenuItem Header="_Kopiuj" Click="MenuItem_Kopiuj" />
+                    <MenuItem Header="_Wytnij" Click="MenuItem_Wytnij"/>
+                    <MenuItem Header="_Wklej" Click="MenuItem_Wklej" />
+                </MenuItem>
+                <MenuItem Header="_Format">
+                    <MenuItem Header="_Zawijanie wierszy" />
+                    <MenuItem Header="_Czcionka" >
+                        <MenuItem Header="_-" Click="MenuItem_Minus"/>
+                        <MenuItem Header="_+" Click="MenuItem_Plus"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Widok">
+                    <MenuItem Header="_Powiekszenie">
+                        <MenuItem Header="_-" Click="Pov_Minus"/>
+                        <MenuItem Header="_+" Click="Pov_Plus"/>
+                    </MenuItem>
+                    <MenuItem Header="_Pasek stanu" />
+                </MenuItem>
+                <MenuItem Header="_Pomoc">
+                    <MenuItem Header="_Test" />
+                </MenuItem>
+            </Menu>
+            <TextBox TextChanged="txt_TextChanged" x:Name="txt" HorizontalAlignment="Center" FontSize="12" Padding="10,0" FontWeight="SemiBold"  TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="778" Height="418">
+               
+            </TextBox>
+            <Menu HorizontalAlignment="Right" Margin="2,0" >
+                <TextBlock x:Name="count" IsEnabled="False" Text="znaki: 0" FontSize="14" Width="125" Height="40" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="countw" IsEnabled="False" Text="słowa: 0" FontSize="14" Width="100" Height="40" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="scal" IsEnabled="False" Text="Skala: 100%" Width="80" Height="40" HorizontalAlignment="Right"/>
+                <TextBlock IsEnabled="False" Text="Windows (CRLF)" Width="90" Height="40" HorizontalAlignment="Right"/>
+                <TextBlock IsEnabled="False" Text="UTF-08" Width="75" Height="40" HorizontalAlignment="Right"/>
+            </Menu>
+            
+        </StackPanel>
+
+    </Grid>
+</Window>
